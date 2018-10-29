@@ -7,13 +7,17 @@
 //
 
 import UIKit
+import SwiftyJSON
 
-var userName: String = ""
+var userName: String = "kroutled"
 var token = ""
 
 class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
+        let api = ApiController()
+        api.getToken()
+        getUserInfo()
         // Do any additional setup after loading the view, typically from a nib.
     }
 
@@ -33,7 +37,8 @@ class ViewController: UIViewController {
                 print(error as Any)
             }
             else if let d = data {
-                json1 = JSON(d)
+                let json1 = JSON(d)
+                print(json1)
             }
             dispatch.leave()
         }
