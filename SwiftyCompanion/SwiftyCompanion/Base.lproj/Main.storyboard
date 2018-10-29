@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="NI9-La-WdW">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -18,38 +18,55 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="WeThinkCode-School-Setup-1280x720" translatesAutoresizingMaskIntoConstraints="NO" id="vgV-TX-kin">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                            </imageView>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="DMa-D6-2pa">
-                                <rect key="frame" x="10" y="318.5" width="355" height="30"/>
+                                <rect key="frame" x="102.5" y="319" width="170" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="170" id="jWh-HM-7Tz"/>
+                                </constraints>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AVV-vY-PTL">
-                                <rect key="frame" x="164" y="389" width="46" height="30"/>
+                                <rect key="frame" x="130" y="389" width="115" height="30"/>
+                                <color key="backgroundColor" red="0.83611595809999995" green="0.26598160599999998" blue="0.089591408149999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="115" id="tSI-2A-mBf"/>
                                     <constraint firstAttribute="height" constant="30" id="tht-8d-Lha"/>
                                 </constraints>
-                                <state key="normal" title="Button"/>
+                                <state key="normal" title="Search User">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
                                 <connections>
+                                    <action selector="searchButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="dX8-tf-bKZ"/>
                                     <segue destination="Dh5-q5-hoN" kind="show" id="gAc-7b-s7h"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="DMa-D6-2pa" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="Buo-ch-af7"/>
+                            <constraint firstItem="vgV-TX-kin" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="3bB-Bo-hAK"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="vgV-TX-kin" secondAttribute="trailing" id="Ch9-02-aKZ"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="vgV-TX-kin" secondAttribute="bottom" id="JSX-sQ-GwT"/>
                             <constraint firstItem="AVV-vY-PTL" firstAttribute="top" secondItem="DMa-D6-2pa" secondAttribute="bottom" constant="40" id="KM1-NI-TVR"/>
+                            <constraint firstItem="vgV-TX-kin" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="QDT-AI-wU8"/>
                             <constraint firstItem="DMa-D6-2pa" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="QmC-mA-gxr"/>
                             <constraint firstItem="DMa-D6-2pa" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="c6k-fE-zP4"/>
                             <constraint firstItem="AVV-vY-PTL" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="k1U-45-RU4"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="DMa-D6-2pa" secondAttribute="trailing" constant="10" id="n9W-o1-AOh"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <navigationItem key="navigationItem" id="nzv-IP-TWp"/>
+                    <connections>
+                        <outlet property="userField" destination="DMa-D6-2pa" id="Rdf-5u-Ki5"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="117.59999999999999" y="118.29085457271366"/>
+            <point key="canvasLocation" x="1056.8" y="118.29085457271366"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="xGo-2C-lhv">
@@ -64,7 +81,28 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x2X-5x-XwO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="764" y="118"/>
+            <point key="canvasLocation" x="1703.2" y="117.39130434782609"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="yJW-KK-hWm">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="NI9-La-WdW" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="xn9-QK-SgF">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="AuR-Dr-lbc"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="sTT-ds-uwz" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="117.59999999999999" y="118.29085457271366"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="WeThinkCode-School-Setup-1280x720" width="1280" height="720"/>
+    </resources>
 </document>

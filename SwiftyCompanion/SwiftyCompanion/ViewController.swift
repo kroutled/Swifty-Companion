@@ -9,15 +9,26 @@
 import UIKit
 import SwiftyJSON
 
-var userName: String = "kroutled"
+var userName: String = ""
 var token = ""
 
 class ViewController: UIViewController {
+    @IBOutlet weak var userField: UITextField!
+    @IBAction func searchButton(_ sender: Any) {
+        if userField.text != "" {
+            userName = userField.text!
+            let api = ApiController()
+            api.getToken()
+            getUserInfo()
+        }
+        else {
+            print("Please enter a username")
+        }
+        print(userName)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        let api = ApiController()
-        api.getToken()
-        getUserInfo()
         // Do any additional setup after loading the view, typically from a nib.
     }
 
