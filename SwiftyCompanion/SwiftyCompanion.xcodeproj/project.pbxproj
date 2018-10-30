@@ -15,6 +15,7 @@
 		24F4D58B2186F77C00C5C234 /* apiController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24F4D58A2186F77C00C5C234 /* apiController.swift */; };
 		4182D449D0A283E618BC9270 /* Pods_SwiftyCompanionUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9368EAF767E63D815606E6F6 /* Pods_SwiftyCompanionUITests.framework */; };
 		424A9CB21FD535123E083CF8 /* Pods_SwiftyCompanion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC98617B743C0EE65D48C3A9 /* Pods_SwiftyCompanion.framework */; };
+		4974313C21886EBC00CC72DB /* displayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4974313B21886EBC00CC72DB /* displayViewController.swift */; };
 		FA4F4E75DCEFDBD66C0780D0 /* Pods_SwiftyCompanionTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5EC2E372F8D9AC3006B0409 /* Pods_SwiftyCompanionTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -47,6 +48,7 @@
 		24523EF3218313B300EE9C45 /* SwiftyCompanionTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SwiftyCompanionTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		24523EFE218313B300EE9C45 /* SwiftyCompanionUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SwiftyCompanionUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		24F4D58A2186F77C00C5C234 /* apiController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = apiController.swift; sourceTree = "<group>"; };
+		4974313B21886EBC00CC72DB /* displayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = displayViewController.swift; sourceTree = "<group>"; };
 		4E23ED0F60087C4C984B54FC /* Pods-SwiftyCompanion.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftyCompanion.release.xcconfig"; path = "Pods/Target Support Files/Pods-SwiftyCompanion/Pods-SwiftyCompanion.release.xcconfig"; sourceTree = "<group>"; };
 		4F77B2C1A4B641BFFC5073E0 /* Pods-SwiftyCompanionUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftyCompanionUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SwiftyCompanionUITests/Pods-SwiftyCompanionUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		7A9C41E80718D67F7E9DD688 /* Pods-SwiftyCompanion.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftyCompanion.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SwiftyCompanion/Pods-SwiftyCompanion.debug.xcconfig"; sourceTree = "<group>"; };
@@ -123,6 +125,7 @@
 			children = (
 				24523EE2218313AE00EE9C45 /* AppDelegate.swift */,
 				24523EE4218313AE00EE9C45 /* ViewController.swift */,
+				4974313B21886EBC00CC72DB /* displayViewController.swift */,
 				24523EE6218313AE00EE9C45 /* Main.storyboard */,
 				24523EE9218313B300EE9C45 /* Assets.xcassets */,
 				24523EEB218313B300EE9C45 /* LaunchScreen.storyboard */,
@@ -355,6 +358,7 @@
 				24523EE5218313AE00EE9C45 /* ViewController.swift in Sources */,
 				24F4D58B2186F77C00C5C234 /* apiController.swift in Sources */,
 				24523EE3218313AE00EE9C45 /* AppDelegate.swift in Sources */,
+				4974313C21886EBC00CC72DB /* displayViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -11,20 +11,28 @@ import SwiftyJSON
 
 var userName: String = ""
 var token = ""
+var displayName = ""
+var user = ""
+var city = ""
+var email = ""
 
 class ViewController: UIViewController {
     @IBOutlet weak var userField: UITextField!
     @IBAction func searchButton(_ sender: Any) {
         if userField.text != "" {
             userName = userField.text!
-            let api = ApiController()
-            api.getToken()
-            getUserInfo()
+            makeRequest()
         }
         else {
             print("Please enter a username")
         }
         print(userName)
+    }
+    
+    func makeRequest() {
+        let api = ApiController()
+        api.getToken()
+        getUserInfo()
     }
     
     override func viewDidLoad() {
@@ -47,9 +55,13 @@ class ViewController: UIViewController {
             if error != nil {
                 print(error as Any)
             }
-            else if let d = data {
-                let json1 = JSON(d)
-                print(json1)
+            else if let returnedData = data {
+                let json = JSON(returnedData)
+                print(json)
+                displayName = json["displayname"].string!
+                user = json["login"].string!
+                city = json["campus"][0]["city"].string!
+                email = json["email"].string!
             }
             dispatch.leave()
         }
