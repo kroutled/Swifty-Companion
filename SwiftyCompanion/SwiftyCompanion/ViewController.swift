@@ -15,6 +15,7 @@ var displayName = ""
 var user = ""
 var city = ""
 var email = ""
+var jsonData: JSON?
 
 class ViewController: UIViewController {
     @IBOutlet weak var userField: UITextField!
@@ -57,6 +58,7 @@ class ViewController: UIViewController {
             }
             else if let returnedData = data {
                 let json = JSON(returnedData)
+                jsonData = JSON(returnedData)
                 print(json)
                 displayName = json["displayname"].string!
                 user = json["login"].string!

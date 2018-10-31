@@ -8,7 +8,7 @@
 
 import UIKit
 
-class displayViewController: UIViewController {
+class displayViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
     @IBOutlet weak var profilePic: UIImageView!
     @IBOutlet weak var fullNameLabel: UILabel!
@@ -16,6 +16,26 @@ class displayViewController: UIViewController {
     @IBOutlet weak var cityLabel: UILabel!
     @IBOutlet weak var emailLabel: UILabel!
     @IBOutlet weak var progressBar: UIProgressView!
+    
+    @IBOutlet weak var projectTableView: UITableView! {
+        didSet {
+            projectTableView.delegate = self
+            projectTableView.dataSource = self
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return jsonData!["projects_users"].count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "ProjectCell")
+        cell?.textLabel?.text = jsonData!["projects_users"][indexPath.row]["project"]["name"].string!
+        cell?.detailTextLabel?.text = jsonData!["projects_users"][indexPath.row]["final_mark"].string
+        print(jsonData!["projects_users"][indexPath.row]["final_mark"])
+        return cell!
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         fullNameLabel.text = displayName
