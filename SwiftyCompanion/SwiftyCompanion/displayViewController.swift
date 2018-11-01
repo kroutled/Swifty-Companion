@@ -31,7 +31,8 @@ class displayViewController: UIViewController, UITableViewDataSource, UITableVie
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ProjectCell")
         cell?.textLabel?.text = jsonData!["projects_users"][indexPath.row]["project"]["name"].string!
-        cell?.detailTextLabel?.text = jsonData!["projects_users"][indexPath.row]["final_mark"].string
+        let mark = "\(String(describing: jsonData!["projects_users"][indexPath.row]["final_mark"]))"
+        cell?.detailTextLabel?.text = mark
         print(jsonData!["projects_users"][indexPath.row]["final_mark"])
         return cell!
     }
