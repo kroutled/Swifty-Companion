@@ -17,6 +17,7 @@ class displayViewController: UIViewController, UITableViewDataSource, UITableVie
     @IBOutlet weak var emailLabel: UILabel!
     @IBOutlet weak var progressBar: UIProgressView!
     
+    @IBOutlet weak var segmentedControl: UISegmentedControl!
     @IBOutlet weak var projectTableView: UITableView! {
         didSet {
             projectTableView.delegate = self
@@ -24,11 +25,46 @@ class displayViewController: UIViewController, UITableViewDataSource, UITableVie
         }
     }
     
+//    func setProfilePic() {
+//        let imageURL = jsonData!["image_url"].string!
+//        if let url = NSURL(sting: imageURL) {
+//
+//        }
+//    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return jsonData!["projects_users"].count
+        if segmentedControl.selectedSegmentIndex == 0 {
+            print("Projects segment selected")
+            return jsonData!["projects_users"].count
+        }
+        else if segmentedControl.selectedSegmentIndex == 1 {
+            print("Skills segment selcted")
+            return jsonData!["cursus_users"][0]["skills"].count
+        }
+        return 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        if segmentedControl.selectedSegmentIndex == 0 {
+            print("PROJECTS SEGMENT")
+            let cell = tableView.dequeueReusableCell(withIdentifier: "ProjectCell")
+            cell?.textLabel?.text = jsonData!["projects_users"][indexPath.row]["project"]["name"].string!
+            let mark = "\(String(describing: jsonData!["projects_users"][indexPath.row]["final_mark"]))"
+            cell?.detailTextLabel?.text = mark
+            print(jsonData!["projects_users"][indexPath.row]["final_mark"])
+            return cell!
+        }
+        else if segmentedControl.selectedSegmentIndex == 1 {
+            print("SKILLS SEGEMENT")
+            let cell = tableView.dequeueReusableCell(withIdentifier: "ProjectCell")
+            cell?.textLabel?.text = jsonData!["cursus_users"][0]["skills"][indexPath.row]["name"].string
+            let level = "\(String(describing: jsonData!["cursus_users"][0]["skills"][indexPath.row]["level"]))"
+            cell?.detailTextLabel?.text = level
+            print(jsonData!["cursus_users"][0]["skills"][indexPath.row]["name"])
+            return cell!
+        }
+        
+        print ("NOT in if/else statement")
         let cell = tableView.dequeueReusableCell(withIdentifier: "ProjectCell")
         cell?.textLabel?.text = jsonData!["projects_users"][indexPath.row]["project"]["name"].string!
         let mark = "\(String(describing: jsonData!["projects_users"][indexPath.row]["final_mark"]))"
@@ -43,6 +79,7 @@ class displayViewController: UIViewController, UITableViewDataSource, UITableVie
         userNameLabel.text = user
         cityLabel.text = city
         emailLabel.text = email
+        //setProfilePic()
         // Do any additional setup after loading the view.
     }
 
@@ -50,8 +87,10 @@ class displayViewController: UIViewController, UITableViewDataSource, UITableVie
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    @IBAction func segmentChangeValue(_ sender: Any) {
+            projectTableView.reloadData()
+    }
     
-
     /*
     // MARK: - Navigation
 
