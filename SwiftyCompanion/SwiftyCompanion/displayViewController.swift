@@ -16,6 +16,7 @@ class displayViewController: UIViewController, UITableViewDataSource, UITableVie
     @IBOutlet weak var cityLabel: UILabel!
     @IBOutlet weak var emailLabel: UILabel!
     @IBOutlet weak var progressBar: UIProgressView!
+    @IBOutlet weak var levelLabel: UILabel!
     
     @IBOutlet weak var segmentedControl: UISegmentedControl!
     @IBOutlet weak var projectTableView: UITableView! {
@@ -84,6 +85,14 @@ class displayViewController: UIViewController, UITableViewDataSource, UITableVie
             profilePic.image = UIImage(data: imageData)
         }
         print(jsonData!["cursus_users"][0]["level"])
+        var level = jsonData!["cursus_users"][0]["level"].float!
+        let levelInt = jsonData!["cursus_users"][0]["level"].int!
+        print(level)
+        print(levelInt)
+        level = level - Float(levelInt)
+        progressBar.setProgress(level, animated: true)
+        level = level + Float(levelInt)
+        levelLabel.text = String(level) //jsonData!["cursus_users"][0]["level"].string
         //setProfilePic()
         // Do any additional setup after loading the view.
     }

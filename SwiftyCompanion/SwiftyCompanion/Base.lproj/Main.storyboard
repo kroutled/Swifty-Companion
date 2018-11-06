@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="NI9-La-WdW">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="NI9-La-WdW">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -22,7 +22,7 @@
                                 <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                             </imageView>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="DMa-D6-2pa">
-                                <rect key="frame" x="102.5" y="319" width="170" height="30"/>
+                                <rect key="frame" x="102.5" y="318.5" width="170" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="170" id="jWh-HM-7Tz"/>
                                 </constraints>
@@ -31,7 +31,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AVV-vY-PTL">
-                                <rect key="frame" x="130" y="389" width="115" height="30"/>
+                                <rect key="frame" x="130" y="388.5" width="115" height="30"/>
                                 <color key="backgroundColor" red="0.83611595809999995" green="0.26598160599999998" blue="0.089591408149999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="115" id="tSI-2A-mBf"/>
@@ -41,8 +41,8 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <action selector="searchButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="dX8-tf-bKZ"/>
-                                    <segue destination="Dh5-q5-hoN" kind="show" id="gAc-7b-s7h"/>
+                                    <action selector="searchButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="HA5-Ys-tnD"/>
+                                    <segue destination="Dh5-q5-hoN" kind="show" identifier="secondView" id="gAc-7b-s7h"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -139,12 +139,6 @@
                                     <constraint firstItem="LUX-qa-xzK" firstAttribute="top" secondItem="ge0-lT-Oas" secondAttribute="top" id="fFP-or-dYw"/>
                                 </constraints>
                             </stackView>
-                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="DQN-xQ-Hjy">
-                                <rect key="frame" x="20" y="211" width="335" height="5"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="5" id="KLw-jT-2M7"/>
-                                </constraints>
-                            </progressView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="eGe-ha-Ybj">
                                 <rect key="frame" x="0.0" y="264" width="375" height="363"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -186,9 +180,22 @@
                                     <action selector="segmentChangeValue:" destination="Dh5-q5-hoN" eventType="valueChanged" id="wda-Bj-0Z6"/>
                                 </connections>
                             </segmentedControl>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Level" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3OZ-TO-fp3">
+                                <rect key="frame" x="167.5" y="207" width="40" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="DQN-xQ-Hjy">
+                                <rect key="frame" x="20" y="235.5" width="335" height="5"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="5" id="KLw-jT-2M7"/>
+                                </constraints>
+                            </progressView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="3OZ-TO-fp3" firstAttribute="centerX" secondItem="fAZ-Qi-mNy" secondAttribute="centerX" id="2rU-jK-U6l"/>
                             <constraint firstItem="eGe-ha-Ybj" firstAttribute="top" secondItem="cz0-87-tKJ" secondAttribute="top" constant="200" id="9ji-Dp-ZIh"/>
                             <constraint firstItem="ge0-lT-Oas" firstAttribute="top" secondItem="cz0-87-tKJ" secondAttribute="top" constant="10" id="AkT-XF-xTt"/>
                             <constraint firstItem="Ce6-qZ-Max" firstAttribute="top" secondItem="eGe-ha-Ybj" secondAttribute="bottom" constant="8" id="DUj-MP-JaJ"/>
@@ -196,11 +203,12 @@
                             <constraint firstItem="eGe-ha-Ybj" firstAttribute="centerX" secondItem="cz0-87-tKJ" secondAttribute="centerX" id="EDR-u3-eZo"/>
                             <constraint firstItem="cz0-87-tKJ" firstAttribute="trailing" secondItem="ge0-lT-Oas" secondAttribute="trailing" constant="10" id="LB1-fn-SU0"/>
                             <constraint firstAttribute="trailing" secondItem="DQN-xQ-Hjy" secondAttribute="trailing" constant="20" id="MZE-af-Dt9"/>
+                            <constraint firstItem="DQN-xQ-Hjy" firstAttribute="top" secondItem="3OZ-TO-fp3" secondAttribute="bottom" constant="8" id="Oet-XU-4Yd"/>
                             <constraint firstItem="cz0-87-tKJ" firstAttribute="bottom" secondItem="Ce6-qZ-Max" secondAttribute="bottom" constant="5" id="acl-XP-l0I"/>
                             <constraint firstItem="ge0-lT-Oas" firstAttribute="leading" secondItem="cz0-87-tKJ" secondAttribute="leading" constant="10" id="cL0-nn-PUr"/>
+                            <constraint firstItem="3OZ-TO-fp3" firstAttribute="top" secondItem="ge0-lT-Oas" secondAttribute="bottom" constant="26" id="cts-LI-0S6"/>
                             <constraint firstItem="eGe-ha-Ybj" firstAttribute="leading" secondItem="cz0-87-tKJ" secondAttribute="leading" id="fza-YM-DpX"/>
                             <constraint firstItem="Ce6-qZ-Max" firstAttribute="centerX" secondItem="cz0-87-tKJ" secondAttribute="centerX" id="pGc-VI-uQA"/>
-                            <constraint firstItem="DQN-xQ-Hjy" firstAttribute="top" secondItem="ge0-lT-Oas" secondAttribute="bottom" constant="30" id="q3q-XP-TxL"/>
                             <constraint firstItem="cz0-87-tKJ" firstAttribute="bottom" secondItem="eGe-ha-Ybj" secondAttribute="bottom" constant="40" id="xda-dx-lQi"/>
                             <constraint firstItem="DQN-xQ-Hjy" firstAttribute="leading" secondItem="cz0-87-tKJ" secondAttribute="leading" constant="20" id="z5Z-SF-CFj"/>
                         </constraints>
@@ -210,6 +218,7 @@
                         <outlet property="cityLabel" destination="Gwa-lc-EQu" id="sKX-wW-jHK"/>
                         <outlet property="emailLabel" destination="e9L-Zy-Uf6" id="cHN-4h-DWt"/>
                         <outlet property="fullNameLabel" destination="CEG-tu-OV7" id="eyP-Ps-nLj"/>
+                        <outlet property="levelLabel" destination="3OZ-TO-fp3" id="zWe-fq-HAq"/>
                         <outlet property="profilePic" destination="C1x-1P-7Wc" id="tEl-8t-b3v"/>
                         <outlet property="progressBar" destination="DQN-xQ-Hjy" id="hxp-SX-Exe"/>
                         <outlet property="projectTableView" destination="eGe-ha-Ybj" id="fG7-j8-lls"/>
