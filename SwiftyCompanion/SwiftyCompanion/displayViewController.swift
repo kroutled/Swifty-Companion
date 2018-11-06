@@ -31,7 +31,6 @@ class displayViewController: UIViewController, UITableViewDataSource, UITableVie
 //
 //        }
 //    }
-    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if segmentedControl.selectedSegmentIndex == 0 {
             print("Projects segment selected")
@@ -79,6 +78,12 @@ class displayViewController: UIViewController, UITableViewDataSource, UITableVie
         userNameLabel.text = user
         cityLabel.text = city
         emailLabel.text = email
+        let url = URL(string: jsonData!["image_url"].string!)
+        let data = try? Data(contentsOf: url!)
+        if let imageData = data {
+            profilePic.image = UIImage(data: imageData)
+        }
+        print(jsonData!["cursus_users"][0]["level"])
         //setProfilePic()
         // Do any additional setup after loading the view.
     }

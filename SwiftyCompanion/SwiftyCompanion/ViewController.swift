@@ -59,11 +59,19 @@ class ViewController: UIViewController {
             else if let returnedData = data {
                 let json = JSON(returnedData)
                 jsonData = JSON(returnedData)
-                print(json)
-                displayName = json["displayname"].string!
-                user = json["login"].string!
-                city = json["campus"][0]["city"].string!
-                email = json["email"].string!
+                if json["displayname"].string == nil {
+                    userName = ""
+                    print("No user found")
+                    
+                }
+                else
+                {
+                    print(json)
+                    displayName = json["displayname"].string!
+                    user = json["login"].string!
+                    city = json["campus"][0]["city"].string!
+                    email = json["email"].string!
+                }
             }
             dispatch.leave()
         }
