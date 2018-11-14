@@ -75,26 +75,32 @@ class displayViewController: UIViewController, UITableViewDataSource, UITableVie
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        fullNameLabel.text = displayName
-        userNameLabel.text = user
-        cityLabel.text = city
-        emailLabel.text = email
-        let url = URL(string: jsonData!["image_url"].string!)
-        let data = try? Data(contentsOf: url!)
-        if let imageData = data {
-            profilePic.image = UIImage(data: imageData)
+        if (jsonData?["displayname"].string == nil)
+        {
+            print("seque no loady")
         }
-        print(jsonData!["cursus_users"][0]["level"])
-        var level = jsonData!["cursus_users"][0]["level"].float!
-        let levelInt = jsonData!["cursus_users"][0]["level"].int!
-        print(level)
-        print(levelInt)
-        level = level - Float(levelInt)
-        progressBar.setProgress(level, animated: true)
-        level = level + Float(levelInt)
-        levelLabel.text = String(level) //jsonData!["cursus_users"][0]["level"].string
-        //setProfilePic()
-        // Do any additional setup after loading the view.
+        else
+        {
+            fullNameLabel.text = jsonData!["displayname"].string!
+            userNameLabel.text = jsonData!["login"].string!
+            cityLabel.text = jsonData!["campus"][0]["city"].string!
+            emailLabel.text = jsonData!["email"].string!
+        
+            let url = URL(string: jsonData!["image_url"].string!)
+            let data = try? Data(contentsOf: url!)
+            if let imageData = data {
+                profilePic.image = UIImage(data: imageData)
+            }
+            print(jsonData!["cursus_users"][0]["level"])
+            var level = jsonData!["cursus_users"][0]["level"].float!
+            let levelInt = jsonData!["cursus_users"][0]["level"].int!
+            level = level - Float(levelInt)
+            progressBar.setProgress(level, animated: true)
+            level = level + Float(levelInt)
+            levelLabel.text = String(level) //jsonData!["cursus_users"][0]["level"].string
+            //setProfilePic()
+            // Do any additional setup after loading the view.
+        }
     }
 
     override func didReceiveMemoryWarning() {

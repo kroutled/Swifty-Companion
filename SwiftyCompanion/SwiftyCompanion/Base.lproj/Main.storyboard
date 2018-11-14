@@ -28,7 +28,7 @@
                                 </constraints>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AVV-vY-PTL">
                                 <rect key="frame" x="130" y="388.5" width="115" height="30"/>
@@ -42,7 +42,6 @@
                                 </state>
                                 <connections>
                                     <action selector="searchButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="HA5-Ys-tnD"/>
-                                    <segue destination="Dh5-q5-hoN" kind="show" identifier="secondView" id="gAc-7b-s7h"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -62,6 +61,7 @@
                     <navigationItem key="navigationItem" id="nzv-IP-TWp"/>
                     <connections>
                         <outlet property="userField" destination="DMa-D6-2pa" id="Rdf-5u-Ki5"/>
+                        <segue destination="Dh5-q5-hoN" kind="show" identifier="firstToSecond" id="smE-O2-kin"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
