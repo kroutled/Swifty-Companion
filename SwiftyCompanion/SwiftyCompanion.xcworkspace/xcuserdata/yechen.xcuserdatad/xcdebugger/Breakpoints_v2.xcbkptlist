@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SwiftyCompanion/ViewController.swift"
-            timestampString = "563896712.264807"
+            timestampString = "563976485.5151"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "119"
-            endingLineNumber = "119"
+            startingLineNumber = "120"
+            endingLineNumber = "120"
             landmarkName = "getUserInfo(sender:)"
             landmarkType = "7">
          </BreakpointContent>

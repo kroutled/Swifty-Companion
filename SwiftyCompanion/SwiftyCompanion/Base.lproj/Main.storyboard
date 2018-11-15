@@ -61,7 +61,7 @@
                     <navigationItem key="navigationItem" id="nzv-IP-TWp"/>
                     <connections>
                         <outlet property="userField" destination="DMa-D6-2pa" id="Rdf-5u-Ki5"/>
-                        <segue destination="Dh5-q5-hoN" kind="show" identifier="firstToSecond" id="smE-O2-kin"/>
+                        <segue destination="Dh5-q5-hoN" kind="show" identifier="firstToSecond" id="Kfo-EF-tuI"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -233,6 +233,7 @@
         <!--Navigation Controller-->
         <scene sceneID="yJW-KK-hWm">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="sTT-ds-uwz" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="NI9-La-WdW" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="xn9-QK-SgF">
@@ -244,7 +245,6 @@
                         <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="AuR-Dr-lbc"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="sTT-ds-uwz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="117.59999999999999" y="118.29085457271366"/>
         </scene>

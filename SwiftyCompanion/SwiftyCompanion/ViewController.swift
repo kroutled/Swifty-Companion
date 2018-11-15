@@ -40,6 +40,7 @@ class ViewController: UIViewController /*UITextFieldDelegate*/ {
     }
     
     func getUserInfo(sender: Any?) {
+        jsonData = nil
         
         var request = URLRequest(url: URL(string: "https://api.intra.42.fr/v2/users/"+(userName)+"?access_token="+(token))!)
         
@@ -123,6 +124,9 @@ class ViewController: UIViewController /*UITextFieldDelegate*/ {
         userName = userField.text!.trimmingCharacters(in: .whitespacesAndNewlines).lowercased()
         if userName != "" {
             getUserInfo(sender: sender)
+            if jsonData != nil {
+                self.performSegue(withIdentifier: "firstToSecond", sender: sender)
+            }
         }
         else {
             print("Please enter a username")
