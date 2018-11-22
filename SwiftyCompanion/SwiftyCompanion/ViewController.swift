@@ -11,10 +11,6 @@ import SwiftyJSON
 
 var userName: String = ""
 var token = ""
-//var displayName = ""
-//var user = ""
-//var city = ""
-//var email = ""
 let api = ApiController()
 var jsonData: JSON?
 
@@ -47,7 +43,7 @@ class ViewController: UIViewController /*UITextFieldDelegate*/ {
         request.httpMethod = "GET"
         
         let dispatch = DispatchGroup()
-        print("you there?")
+
         let newTask = URLSession.shared.dataTask(with: request) { (data, response, error) in
             if error != nil {
                 print(error as Any)
@@ -56,68 +52,24 @@ class ViewController: UIViewController /*UITextFieldDelegate*/ {
             {
                 let httpResponse = response as! HTTPURLResponse
                 print (httpResponse.statusCode)
-                if (httpResponse.statusCode == 200)
+                if (httpResponse.statusCode != 200) {
+                    //self.showAlert()
+                    print(httpResponse.statusCode, " :ERROR!")
+                }
+                else if (httpResponse.statusCode == 200)
                 {
                     if let returnedData = data {
                         jsonData = JSON(returnedData)
-                        print (jsonData)
+                        //print (jsonData)
                         //print (jsonData!["displayname"].string)
                     }
                 }
-                else
-                {
-                    print("404: user not found")
-                    self.showAlert()
-                }
             }
             dispatch.leave()
-            print("uhuhuh")
         }
         dispatch.enter()
         newTask.resume()
         dispatch.wait()
-        print ("HEY")
-//        let task = URLSession.shared.dataTask(with: request as URLRequest) {
-//            (data, response, error) in
-//            print("maybe")
-//            //print(response as Any)
-//            if error != nil {
-//                print(error as Any)
-//            }
-//            if let httpResponse = response as? HTTPURLResponse {
-//                if httpResponse.statusCode == 200 {
-//                    if let returnedData = data {
-//                        jsonData = JSON(returnedData)
-                        //jsonData = json
-//                        if json["displayname"].string == nil {
-//                            userName = ""
-//                            print("No user found")
-//                        }
-//                        else
-//                        {
-//                            if self.shouldPerformSegue(withIdentifier: "secondView", sender: sender)
-//                            {
-                                //print(json)
-//                                displayName = json["displayname"].string!
-//                                user = json["login"].string!
-//                                city = json["campus"][0]["city"].string!
-//                                email = json["email"].string!
-//                                print(displayName + "\n" + user + "\n" + city + "\n" + email)
-//                            }
-//                        }
-//                        print (jsonData!["displayname"].string!)
-//                }
-//
-//            }
-//            else {
-//                print("404: user not found")
-//                }
-//            }
-//            //dispatch.leave()
-//        }
-        //dispatch.enter()
-        //task.resume()
-        //dispatch.wait()
     }
     
     @IBAction func searchButton(_ sender: Any) {
@@ -131,23 +83,7 @@ class ViewController: UIViewController /*UITextFieldDelegate*/ {
         else {
             print("Please enter a username")
             self.showAlert()
-            
         }
-        //print(userName)
     }
     
-//    override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
-//        if  {
-//            return false
-//        }
-//        return true
-//    }
-    
-//    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string :String) -> Bool
-//    {
-//        let allowedCharacters = CharacterSet.letters
-//        let characterSet = CharacterSet(charactersIn: string)
-//        return allowedCharacters.isSuperset(of: characterSet)
-//    }
 }
-

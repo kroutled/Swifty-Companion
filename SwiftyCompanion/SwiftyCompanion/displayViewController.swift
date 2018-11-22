@@ -26,19 +26,13 @@ class displayViewController: UIViewController, UITableViewDataSource, UITableVie
         }
     }
     
-//    func setProfilePic() {
-//        let imageURL = jsonData!["image_url"].string!
-//        if let url = NSURL(sting: imageURL) {
-//
-//        }
-//    }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if segmentedControl.selectedSegmentIndex == 0 {
-            print("Projects segment selected")
+            print("PROJECTS segment selected")
             return jsonData!["projects_users"].count
         }
         else if segmentedControl.selectedSegmentIndex == 1 {
-            print("Skills segment selcted")
+            print("SKILLS segment selcted")
             return jsonData!["cursus_users"][0]["skills"].count
         }
         return 0
@@ -51,7 +45,7 @@ class displayViewController: UIViewController, UITableViewDataSource, UITableVie
             cell?.textLabel?.text = jsonData!["projects_users"][indexPath.row]["project"]["name"].string!
             let mark = "\(String(describing: jsonData!["projects_users"][indexPath.row]["final_mark"]))"
             cell?.detailTextLabel?.text = mark
-            print(jsonData!["projects_users"][indexPath.row]["final_mark"])
+//            print(jsonData!["projects_users"][indexPath.row]["final_mark"])
             return cell!
         }
         else if segmentedControl.selectedSegmentIndex == 1 {
@@ -60,7 +54,7 @@ class displayViewController: UIViewController, UITableViewDataSource, UITableVie
             cell?.textLabel?.text = jsonData!["cursus_users"][0]["skills"][indexPath.row]["name"].string
             let level = "\(String(describing: jsonData!["cursus_users"][0]["skills"][indexPath.row]["level"]))"
             cell?.detailTextLabel?.text = level
-            print(jsonData!["cursus_users"][0]["skills"][indexPath.row]["name"])
+//            print(jsonData!["cursus_users"][0]["skills"][indexPath.row]["name"])
             return cell!
         }
         
@@ -69,7 +63,7 @@ class displayViewController: UIViewController, UITableViewDataSource, UITableVie
         cell?.textLabel?.text = jsonData!["projects_users"][indexPath.row]["project"]["name"].string!
         let mark = "\(String(describing: jsonData!["projects_users"][indexPath.row]["final_mark"]))"
         cell?.detailTextLabel?.text = mark
-        print(jsonData!["projects_users"][indexPath.row]["final_mark"])
+//        print(jsonData!["projects_users"][indexPath.row]["final_mark"])
         return cell!
     }
     
