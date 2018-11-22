@@ -61,7 +61,6 @@ class ViewController: UIViewController /*UITextFieldDelegate*/ {
                     if let returnedData = data {
                         jsonData = JSON(returnedData)
                         //print (jsonData)
-                        //print (jsonData!["displayname"].string)
                     }
                 }
             }
@@ -85,5 +84,4 @@ class ViewController: UIViewController /*UITextFieldDelegate*/ {
             self.showAlert()
         }
     }
-    
 }
